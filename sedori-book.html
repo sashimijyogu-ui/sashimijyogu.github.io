@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不用品せどり入門 ― 自宅の「ゴミ」を月3万円に変えたサラリーマンの記録</title>
+<meta name="description" content="仕入れ0円。自宅の不用品を売るだけで月3万円。副業未経験のサラリーマンが半年で残業代を取り戻した全記録。Kindle Unlimitedで読み放題。">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #1c2530;
+    --accent: #e8632e;       /* Amazonオレンジ寄りの差し色 */
+    --accent-dark: #c84d1c;
+    --gold: #f5a623;
+    --paper: #fbf8f3;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --line: #ececec;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    color: var(--ink); line-height: 1.85; background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; }
+
+  /* ===== HEADER ===== */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251,248,243,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px;
+  }
+  .brand { font-weight: 800; font-size: 0.95rem; letter-spacing: .02em; }
+  .brand span { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #fff; text-decoration: none;
+    padding: 9px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 700;
+    transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--accent-dark); }
+
+  /* ===== HERO ===== */
+  .hero { padding: 56px 0 64px; }
+  .hero-grid {
+    display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: center;
+  }
+  .cover {
+    aspect-ratio: 3 / 4.4; border-radius: 8px;
+    background: linear-gradient(150deg, #16304a 0%, #1f4d6b 55%, #2b6a87 100%);
+    box-shadow: 0 24px 50px rgba(20,40,60,.28), 0 4px 10px rgba(0,0,0,.15);
+    color: #fff; padding: 30px 26px; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .cover::after {
+    content: ""; position: absolute; top: 0; left: 18px; bottom: 0; width: 3px;
+    background: rgba(255,255,255,.18);
+  }
+  .cover .kicker {
+    font-size: 0.72rem; letter-spacing: .22em; color: var(--gold); font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .cover .big-num {
+    font-size: 3.6rem; font-weight: 900; line-height: 1; color: var(--gold);
+    margin: 6px 0 2px;
+  }
+  .cover .big-num small { font-size: 1.3rem; }
+  .cover h1 {
+    font-size: 1.5rem; font-weight: 900; line-height: 1.4; margin-top: auto;
+    letter-spacing: .01em;
+  }
+  .cover .sub { font-size: 0.82rem; opacity: .8; margin-top: 12px; }
+  .cover .byline { font-size: 0.78rem; opacity: .7; margin-top: 18px; }
+
+  .hero-copy .ku-badge {
+    display: inline-block; background: #232f3e; color: #fff; font-size: 0.72rem;
+    font-weight: 700; letter-spacing: .08em; padding: 5px 12px; border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .hero-copy h2 { font-size: 1.9rem; font-weight: 900; line-height: 1.45; margin-bottom: 18px; }
+  .hero-copy h2 em { color: var(--accent); font-style: normal; }
+  .hero-copy p.lead { color: #444; font-size: 1rem; margin-bottom: 26px; }
+  .price-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
+  .price-row .now { font-size: 1.6rem; font-weight: 900; color: var(--accent); }
+  .price-row .ku { font-size: 0.85rem; color: var(--muted); }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    text-decoration: none; padding: 15px 30px; border-radius: 50px;
+    font-weight: 800; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;
+    transition: transform .15s, background .2s;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+  .btn-ghost { background: #fff; color: var(--ink); border: 2px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--accent); }
+
+  /* ===== TRUST STRIP ===== */
+  .trust { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); text-align: center;
+    padding: 28px 0;
+  }
+  .trust-item .num { font-size: 1.8rem; font-weight: 900; color: var(--accent); }
+  .trust-item .lab { font-size: 0.78rem; color: var(--muted); }
+
+  /* ===== SECTION BASE ===== */
+  section.block { padding: 64px 0; }
+  .eyebrow { font-size: 0.74rem; font-weight: 800; letter-spacing: .2em; color: var(--accent); margin-bottom: 8px; }
+  .h-sec { font-size: 1.6rem; font-weight: 900; margin-bottom: 8px; line-height: 1.4; }
+  .sub-sec { color: var(--muted); font-size: 0.95rem; margin-bottom: 36px; }
+
+  /* ===== PAIN ===== */
+  .pain-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .pain-item {
+    background: #fff; border-radius: 12px; padding: 18px 20px; border-left: 4px solid var(--gold);
+    font-weight: 600; font-size: 0.95rem; display: flex; gap: 12px; align-items: center;
+  }
+  .pain-item .chk { color: var(--accent); font-weight: 900; }
+
+  /* ===== TOC ===== */
+  .toc { background: #fff; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .toc-item {
+    border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px;
+    transition: border-color .2s, transform .15s;
+  }
+  .toc-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .toc-item .ch { font-size: 0.74rem; font-weight: 800; color: var(--accent); letter-spacing: .08em; }
+  .toc-item h4 { font-size: 1rem; font-weight: 800; margin: 4px 0 4px; }
+  .toc-item p { font-size: 0.84rem; color: var(--muted); }
+
+  /* ===== AUDIENCE ===== */
+  .aud-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .aud-card { background:#fff; border-radius:14px; padding: 26px 22px; text-align:center; box-shadow: 0 4px 16px rgba(0,0,0,.05); }
+  .aud-card .ic { font-size: 2.2rem; margin-bottom: 10px; }
+  .aud-card h4 { font-size: 0.98rem; font-weight: 800; margin-bottom: 6px; }
+  .aud-card p { font-size: 0.84rem; color: var(--muted); }
+
+  /* ===== QUOTE ===== */
+  .quote { background: linear-gradient(135deg, #16304a, #2b6a87); color: #fff; text-align: center; }
+  .quote .h-sec { color: #fff; }
+  .quote blockquote { font-size: 1.25rem; font-weight: 700; line-height: 1.9; max-width: 720px; margin: 0 auto; }
+  .quote blockquote em { color: var(--gold); font-style: normal; }
+
+  /* ===== FAQ ===== */
+  details {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px 20px; margin-bottom: 12px;
+  }
+  details summary { font-weight: 700; cursor: pointer; font-size: 0.95rem; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "Q. "; color: var(--accent); font-weight: 900; }
+  details p { margin-top: 12px; color: #444; font-size: 0.9rem; }
+  details[open] summary { color: var(--accent); }
+
+  /* ===== FINAL CTA ===== */
+  .final {
+    background: var(--accent); color: #fff; text-align: center; padding: 72px 20px;
+  }
+  .final h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 14px; }
+  .final p { opacity: .92; margin-bottom: 30px; }
+  .final .btn-white { background:#fff; color: var(--accent-dark); }
+  .final .btn-white:hover { background:#fff1e9; }
+
+  /* ===== FOOTER ===== */
+  footer { background: #1a2330; color: rgba(255,255,255,.6); text-align:center; padding: 28px 20px; font-size: 0.8rem; }
+  footer .disc { font-size: 0.72rem; opacity: .6; margin-top: 8px; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .cover { max-width: 280px; margin: 0 auto; }
+    .hero-copy h2 { font-size: 1.5rem; }
+    .trust-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .pain-list, .toc-grid { grid-template-columns: 1fr; }
+    .aud-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">不用品せどり入門 <span>|</span> Kindle</div>
+  <a href="#buy" class="nav-cta">今すぐ読む</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <!-- 仮の表紙（実画像に差し替え可） -->
+    <div class="cover" id="cover">
+      <div class="kicker">仕入れ0円・スキマ時間30分</div>
+      <div class="big-num">月3<small>万円</small></div>
+      <div class="sub">自宅の「ゴミ」が、お金に変わる。</div>
+      <h1>不用品せどり入門</h1>
+      <div class="sub">自宅の「ゴミ」を月3万円に変えた<br>サラリーマンの記録</div>
+      <div class="byline">― 副業未経験から始める、リスクゼロの第一歩 ―</div>
+    </div>
+
+    <div class="hero-copy">
+      <span class="ku-badge">Kindle Unlimited 読み放題対象</span>
+      <h2>残業代が減った会社員が、<br><em>押し入れのゴミ</em>で<br>月3万円を取り戻すまで。</h2>
+      <p class="lead">
+        仕入れは0円。元手も特別なスキルもいりません。
+        必要なのは、スマホと1日30分、そしてほんの少しのコツだけ。
+        副業が続かなかった私が「最初の1点」を売るまでの全手順を、数字つきで正直に公開します。
+      </p>
+      <div class="price-row">
+        <span class="now">¥500（予定）</span>
+        <span class="ku">／ Kindle Unlimited会員は0円で読み放題</span>
+      </div>
+      <div class="btns">
+        <a href="#buy" class="btn btn-primary">📖 Kindleで読む</a>
+        <a href="#toc" class="btn btn-ghost">目次を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><div class="num">0円</div><div class="lab">必要な元手</div></div>
+    <div class="trust-item"><div class="num">30分</div><div class="lab">1日の作業時間</div></div>
+    <div class="trust-item"><div class="num">半年</div><div class="lab">月3万円までの期間</div></div>
+    <div class="trust-item"><div class="num">8章</div><div class="lab">序章〜巻末の構成</div></div>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow">SUCH A PROBLEM?</div>
+    <h3 class="h-sec">こんな悩み、ありませんか?</h3>
+    <p class="sub-sec">ひとつでも当てはまるなら、この本はあなたのためのものです。</p>
+    <div class="pain-list">
+      <div class="pain-item"><span class="chk">✓</span>残業規制で手取りが減ってしまった</div>
+      <div class="pain-item"><span class="chk">✓</span>副業に興味はあるが、何から始めるか分からない</div>
+      <div class="pain-item"><span class="chk">✓</span>初期投資や「教材費」を払うのは怖い</div>
+      <div class="pain-item"><span class="chk">✓</span>プログラミングもブログも続かなかった</div>
+      <div class="pain-item"><span class="chk">✓</span>まとまった時間が取れない</div>
+      <div class="pain-item"><span class="chk">✓</span>とにかく「失敗したくない」</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="block quote">
+  <div class="wrap">
+    <blockquote>
+      「自分が捨てようとしていたものに、<br>
+      お金を払う人がいる」——<br>
+      その小さな成功体験が、<em>あなたの自信</em>と<br>
+      次の一歩につながる。
+    </blockquote>
+  </div>
+</section>
+
+<!-- TOC -->
+<section class="block toc" id="toc">
+  <div class="wrap">
+    <div class="eyebrow">CONTENTS</div>
+    <h3 class="h-sec">本書の内容（全8章）</h3>
+    <p class="sub-sec">読み終えたその日に、自宅の不用品を1点出品できるよう構成しました。</p>
+    <div class="toc-grid">
+      <div class="toc-item"><div class="ch">序章</div><h4>残業代が消えた日</h4><p>なぜ最初の仕入れを「自宅のゴミ」にすべきか。</p></div>
+      <div class="toc-item"><div class="ch">第1章</div><h4>月3万円までのリアルな全記録</h4><p>売上推移・かかった時間・赤字の失敗まで数字で公開。</p></div>
+      <div class="toc-item"><div class="ch">第2章</div><h4>何が売れて、何が売れないか</h4><p>家で眠る「高く売れるもの」と、出品NGの見分け方。</p></div>
+      <div class="toc-item"><div class="ch">第3章</div><h4>メルカリ・ラクマ・Amazon 使い分け</h4><p>初心者がまずメルカリ一択にすべき理由。</p></div>
+      <div class="toc-item"><div class="ch">第4章</div><h4>売れる「写真」と「説明文」の型</h4><p>スマホ撮影5枚の構図とコピペ用テンプレート。</p></div>
+      <div class="toc-item"><div class="ch">第5章</div><h4>値付けと値下げ交渉のコツ</h4><p>SOLD価格の読み方と「神対応」テンプレ。</p></div>
+      <div class="toc-item"><div class="ch">第6章</div><h4>梱包と発送をラクにする道具</h4><p>100均セットと、赤字を防ぐ「手取り」の考え方。</p></div>
+      <div class="toc-item"><div class="ch">第7章</div><h4>トラブル対応とアカウントを守る</h4><p>評価を下げない対応と、規約違反・税金の基礎。</p></div>
+      <div class="toc-item"><div class="ch">巻末</div><h4>30日チャレンジ＆チェックリスト</h4><p>迷わず動ける行動カレンダーと出品前チェック。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow">FOR YOU</div>
+    <h3 class="h-sec">こんな人におすすめ</h3>
+    <p class="sub-sec"></p>
+    <div class="aud-grid">
+      <div class="aud-card"><div class="ic">💼</div><h4>副業デビューしたい会社員</h4><p>リスクなしで「稼ぐ感覚」を体験したい人。</p></div>
+      <div class="aud-card"><div class="ic">🏠</div><h4>家を片付けたい人</h4><p>不用品の処分が、そのままお金になる。</p></div>
+      <div class="aud-card"><div class="ic">📱</div><h4>メルカリ初心者</h4><p>出品も発送も、最初の一歩から丁寧に解説。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h3 class="h-sec">よくある質問</h3>
+    <p class="sub-sec"></p>
+    <details open>
+      <summary>本当に元手0円で始められますか?</summary>
+      <p>はい。本書は「自宅の不用品を売る」ことからスタートするので、商品の仕入れ費用はかかりません。梱包材も100円ショップで揃う範囲で十分です。</p>
+    </details>
+    <details>
+      <summary>せどりやメルカリは完全に未経験ですが大丈夫?</summary>
+      <p>大丈夫です。アカウント開設・出品・写真・梱包・発送・トラブル対応まで、初心者がつまずくポイントに「用語メモ」を添えて順番に解説しています。</p>
+    </details>
+    <details>
+      <summary>忙しくても続けられますか?</summary>
+      <p>著者は通勤と帰宅後のスキマ時間、1日合計30分で運用しました。巻末の「30日チャレンジ」に沿えば無理なく習慣化できます。</p>
+    </details>
+    <details>
+      <summary>Kindle Unlimitedに入っていなくても読めますか?</summary>
+      <p>はい。通常購入でもお読みいただけます。Kindle Unlimited会員なら追加料金0円で読み放題の対象です。</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="buy">
+  <h2>まずは押し入れを開けることから。</h2>
+  <p>あなたの家にも、きっと「3万円の種」が眠っています。</p>
+  <a href="#" class="btn btn-white">📖 Kindleで今すぐ読む</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>不用品せどり入門 ― 自宅の「ゴミ」を月3万円に変えたサラリーマンの記録</div>
+  <p class="disc">※価格・配信状況は予定です。本書の収入・成果は個人の体験に基づくもので、効果を保証するものではありません。<br>&copy; 2026 All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
