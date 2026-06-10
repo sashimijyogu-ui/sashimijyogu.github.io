@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リラクゼーションルーム リフレ｜読谷村のマッサージ・足踏み・ヘッドツボ</title>
+  <meta name="description" content="沖縄県読谷村のリラクゼーションルーム リフレ。足踏み＆手圧＋ヘッドツボ押しで全身をほぐす新感覚施術。個室完備・女性スタッフ・ペア施術対応。お電話・LINEで簡単予約。">
+  <style>
+    :root {
+      --green:  #4a7c59;
+      --green-light: #e8f0eb;
+      --beige:  #f7f3ee;
+      --brown:  #6b4c3b;
+      --text:   #333;
+      --subtext:#777;
+      --white:  #fff;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── ヘッダー ── */
+    header {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 14px 16px 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    header p { font-size: .75rem; opacity: .85; letter-spacing: .05em; }
+    header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: .1em; margin-top: 2px; }
+
+    .header-tel {
+      display: inline-block;
+      margin-top: 8px;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 6px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: .05em;
+    }
+
+    /* ── ヒーロー ── */
+    .hero {
+      background: linear-gradient(160deg, #d4e8da 0%, #f0ede8 60%, #e8ddd5 100%);
+      padding: 48px 20px 40px;
+      text-align: center;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 50px;
+      letter-spacing: .08em;
+      margin-bottom: 14px;
+    }
+    .hero h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--brown);
+      margin-bottom: 12px;
+    }
+    .hero h2 span { color: var(--green); }
+    .hero p {
+      font-size: .9rem;
+      color: #555;
+      max-width: 340px;
+      margin: 0 auto 24px;
+    }
+
+    .hero-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .hero-icon {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--green);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-reserve {
+      display: block;
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 16px 0;
+      border-radius: 50px;
+      text-decoration: none;
+      max-width: 300px;
+      margin: 0 auto 10px;
+      letter-spacing: .08em;
+      box-shadow: 0 6px 20px rgba(74,124,89,.35);
+    }
+    .btn-reserve:active { opacity: .85; }
+
+    .btn-tel {
+      display: block;
+      background: var(--white);
+      color: var(--green);
+      font-size: .95rem;
+      font-weight: 700;
+      padding: 13px 0;
+      border-radius: 50px;
+      text-decoration: none;
+      max-width: 300px;
+      margin: 0 auto;
+      border: 2px solid var(--green);
+      letter-spacing: .05em;
+    }
+
+    /* ── 評価バー ── */
+    .rating-bar {
+      background: var(--green-light);
+      padding: 14px 20px;
+      text-align: center;
+      font-size: .85rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+    .stars { color: #f0a500; font-size: 1rem; margin-right: 6px; }
+
+    /* ── セクション共通 ── */
+    section { padding: 40px 20px; }
+    section:nth-child(even) { background: var(--beige); }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: 6px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: var(--green);
+      margin: 8px auto 24px;
+      border-radius: 2px;
+    }
+    .section-sub {
+      text-align: center;
+      font-size: .82rem;
+      color: var(--subtext);
+      margin-top: -18px;
+      margin-bottom: 24px;
+    }
+
+    /* ── 特徴カード ── */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .feature-card .icon { font-size: 2rem; margin-bottom: 8px; }
+    .feature-card h3 { font-size: .85rem; font-weight: 700; color: var(--brown); margin-bottom: 4px; }
+    .feature-card p { font-size: .75rem; color: var(--subtext); }
+
+    /* ── メニュー ── */
+    .menu-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--green);
+    }
+    .menu-card .menu-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: 4px;
+    }
+    .menu-card .menu-desc {
+      font-size: .8rem;
+      color: var(--subtext);
+      margin-bottom: 10px;
+    }
+    .menu-card .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .menu-card .price-old {
+      font-size: .82rem;
+      color: #aaa;
+      text-decoration: line-through;
+    }
+    .menu-card .price-new {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+    .menu-card .price-new span { font-size: .75rem; }
+
+    .coupon-badge {
+      display: inline-block;
+      background: #fff3e0;
+      color: #e65100;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      border: 1px solid #ffcc80;
+    }
+
+    /* ── 施術の流れ ── */
+    .flow-list { list-style: none; }
+    .flow-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .flow-num {
+      background: var(--green);
+      color: var(--white);
+      font-weight: 800;
+      font-size: .8rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .flow-text h4 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+    .flow-text p { font-size: .78rem; color: var(--subtext); }
+
+    /* ── 口コミ ── */
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow);
+    }
+    .review-card .rev-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .review-card .rev-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .review-card .rev-name { font-size: .82rem; font-weight: 700; }
+    .review-card .rev-stars { color: #f0a500; font-size: .8rem; }
+    .review-card p { font-size: .82rem; color: #555; }
+
+    /* ── アクセス ── */
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr { border-bottom: 1px solid #eee; }
+    .info-table th {
+      text-align: left;
+      font-size: .78rem;
+      color: var(--green);
+      font-weight: 700;
+      padding: 10px 0;
+      width: 80px;
+      vertical-align: top;
+    }
+    .info-table td {
+      font-size: .82rem;
+      padding: 10px 0 10px 8px;
+      color: var(--text);
+    }
+    .map-placeholder {
+      background: var(--green-light);
+      border-radius: var(--radius);
+      margin-top: 16px;
+      padding: 20px;
+      text-align: center;
+      font-size: .82rem;
+      color: var(--green);
+      font-weight: 700;
+      border: 2px dashed var(--green);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .cta-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+    .cta-section p { font-size: .85rem; opacity: .9; margin-bottom: 24px; }
+    .btn-cta-tel {
+      display: block;
+      background: var(--white);
+      color: var(--green);
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 16px 0;
+      border-radius: 50px;
+      text-decoration: none;
+      max-width: 300px;
+      margin: 0 auto 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+    .cta-section .hours {
+      font-size: .78rem;
+      opacity: .8;
+      margin-top: 12px;
+    }
+
+    /* ── フッター ── */
+    footer {
+      background: #2d2d2d;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: .72rem;
+    }
+
+    /* ── デモ帯 ── */
+    .demo-banner {
+      background: #1a1a2e;
+      color: #f0c040;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    @media (min-width: 600px) {
+      .features { grid-template-columns: repeat(4, 1fr); }
+      .hero h2 { font-size: 2rem; }
+      .btn-reserve, .btn-tel { max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- デモ帯（営業用・実際のサイトでは削除） -->
+<div class="demo-banner">
+  ▶ これは提案用デモサイトです（実際のサイトでは削除） ◀
+</div>
+
+<!-- ヘッダー -->
+<header>
+  <p>沖縄県読谷村のリラクゼーション専門店</p>
+  <h1>リラクゼーションルーム リフレ</h1>
+  <a class="header-tel" href="tel:08091451327">📞 080-9145-1327</a>
+</header>
+
+<!-- ヒーロー -->
+<div class="hero">
+  <span class="badge">★5.0 口コミ高評価 / 読谷村No.1</span>
+  <h2>全身の<span>疲れ・こり</span>を<br>根本からほぐす</h2>
+  <p>足踏み＆手圧＋ヘッドツボ押し。<br>個室でプライベートに、しっかりほぐされる<br>新感覚リラクゼーション。</p>
+
+  <div class="hero-icons">
+    <div class="hero-icon">🏠 個室完備</div>
+    <div class="hero-icon">👩 女性スタッフ</div>
+    <div class="hero-icon">👫 ペア対応</div>
+    <div class="hero-icon">🅿️ 駐車場あり</div>
+  </div>
+
+  <a class="btn-reserve" href="tel:08091451327">今すぐ電話予約する</a>
+  <a class="btn-tel" href="tel:08091451327">📞 080-9145-1327</a>
+</div>
+
+<!-- 評価バー -->
+<div class="rating-bar">
+  <span class="stars">★★★★★</span>
+  口コミ評価 <strong>5.0</strong>（6件）｜ご予約受付中 ✅
+</div>
+
+<!-- 特徴 -->
+<section>
+  <h2 class="section-title">リフレが選ばれる理由</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon">🦶</div>
+      <h3>足踏み＆手圧</h3>
+      <p>足でしっかり、手でていねいに。背中・腰の深部までアプローチ</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🧠</div>
+      <h3>ヘッドツボ押し</h3>
+      <p>頭部のツボを刺激して眼精疲労・頭痛・ストレスをスッキリ解消</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🚪</div>
+      <h3>完全個室</h3>
+      <p>周りを気にせずリラックス。カップルや友人とのペア施術も◎</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">👩‍⚕️</div>
+      <h3>女性スタッフ</h3>
+      <p>女性3名の経験豊富なセラピストが担当。初めての方も安心</p>
+    </div>
+  </div>
+</section>
+
+<!-- メニュー -->
+<section>
+  <h2 class="section-title">メニュー・料金</h2>
+  <p class="section-sub">初来店の方もお気軽にどうぞ</p>
+
+  <div class="menu-card">
+    <span class="coupon-badge">🎁 期間限定割引</span>
+    <div class="menu-name">スペシャルコース（2時間）</div>
+    <div class="menu-desc">足踏み＆手圧 + ヘッドツボ押し フルコース。全身をしっかりほぐしたい方に最適。</div>
+    <div class="price-row">
+      <span class="price-old">¥12,000</span>
+      <span class="price-new">¥10,000<span> (税込)</span></span>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <span class="coupon-badge">💳 おトクな回数券</span>
+    <div class="menu-name">回数券（1ヶ月有効）</div>
+    <div class="menu-desc">30分単位で自由に使えるフレキシブル回数券。60分×3回 or 90分×2回など組み合わせ自由。</div>
+    <div class="price-row">
+      <span class="price-old">¥18,000分</span>
+      <span class="price-new">¥15,000<span> (税込)</span></span>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-name">60分コース</div>
+    <div class="menu-desc">初めての方・ちょっと疲れた日に。60分で全身すっきり。</div>
+    <div class="price-row">
+      <span class="price-new">¥6,000〜<span> (税込)</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- 施術の流れ -->
+<section>
+  <h2 class="section-title">はじめての流れ</h2>
+  <ul class="flow-list">
+    <li class="flow-item">
+      <div class="flow-num">1</div>
+      <div class="flow-text">
+        <h4>電話・LINEでご予約</h4>
+        <p>希望日時・コースをお伝えください。当日予約もOK（空き状況による）</p>
+      </div>
+    </li>
+    <li class="flow-item">
+      <div class="flow-num">2</div>
+      <div class="flow-text">
+        <h4>ご来店・カウンセリング</h4>
+        <p>読谷村大木82 ベルレガンス101へ。気になる部位・体調を確認します</p>
+      </div>
+    </li>
+    <li class="flow-item">
+      <div class="flow-num">3</div>
+      <div class="flow-text">
+        <h4>個室でゆったり施術</h4>
+        <p>完全個室でプライベートな空間。担当セラピストがていねいに施術します</p>
+      </div>
+    </li>
+    <li class="flow-item">
+      <div class="flow-num">4</div>
+      <div class="flow-text">
+        <h4>施術後・お会計</h4>
+        <p>術後の感想をお聞きします。次回予約・回数券のご案内もございます</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- 口コミ -->
+<section>
+  <h2 class="section-title">お客様の声</h2>
+  <p class="section-sub">★5.0 ／ 全員が最高評価</p>
+
+  <div class="review-card">
+    <div class="rev-header">
+      <div class="rev-avatar">😊</div>
+      <div>
+        <div class="rev-name">30代女性</div>
+        <div class="rev-stars">★★★★★</div>
+      </div>
+    </div>
+    <p>足踏みは最初ちょっと不安でしたが、体重調整してくれてとても気持ちよかったです。腰痛がかなり楽になりました。また来ます！</p>
+  </div>
+
+  <div class="review-card">
+    <div class="rev-header">
+      <div class="rev-avatar">🧘</div>
+      <div>
+        <div class="rev-name">40代男性</div>
+        <div class="rev-stars">★★★★★</div>
+      </div>
+    </div>
+    <p>仕事終わりに寄りました。ヘッドのツボ押しが効いて、帰るころには頭がスッキリ。個室なので落ち着いてリラックスできました。</p>
+  </div>
+
+  <div class="review-card">
+    <div class="rev-header">
+      <div class="rev-avatar">💆</div>
+      <div>
+        <div class="rev-name">20代女性</div>
+        <div class="rev-stars">★★★★★</div>
+      </div>
+    </div>
+    <p>友人と一緒に利用しました。ペア施術ができるのが嬉しい！スタッフさんが気さくで話しやすく、また一緒に来たいねと盛り上がりました。</p>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section>
+  <h2 class="section-title">アクセス・営業情報</h2>
+  <table class="info-table">
+    <tr>
+      <th>店舗名</th>
+      <td>リラクゼーションルーム リフレ</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>沖縄県中頭郡読谷村大木82<br>ベルレガンス101</td>
+    </tr>
+    <tr>
+      <th>電話</th>
+      <td><a href="tel:08091451327" style="color:var(--green);font-weight:700;">080-9145-1327</a></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td>11:00〜20:00<br><span style="font-size:.75rem;color:var(--subtext);">（最終受付 19:00）</span></td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td>水曜日・日曜日</td>
+    </tr>
+    <tr>
+      <th>駐車場</th>
+      <td>あり（無料）</td>
+    </tr>
+  </table>
+
+  <div class="map-placeholder">
+    📍 Googleマップで開く<br>
+    <span style="font-size:.72rem;font-weight:400;color:#555;">
+      読谷村大木82 ベルレガンス101<br>（実際のサイトにはGoogleマップを埋め込み）
+    </span>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>今すぐご予約を</h2>
+  <p>当日予約もお気軽にどうぞ。<br>女性スタッフ対応・個室完備でお待ちしています。</p>
+  <a class="btn-cta-tel" href="tel:08091451327">📞 080-9145-1327</a>
+  <p class="hours">受付時間 11:00〜19:00 ／ 水・日定休</p>
+</div>
+
+<!-- フッター -->
+<footer>
+  <p>リラクゼーションルーム リフレ</p>
+  <p>〒904-0303 沖縄県中頭郡読谷村大木82 ベルレガンス101</p>
+  <p style="margin-top:8px;">© 2026 Relaxation Room Refre. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
